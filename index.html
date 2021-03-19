@@ -6,7 +6,7 @@
 <meta property="og:title" content="Az igazság!">
 <meta property="og:url" content="https://igazsag.tk">
 <meta property="og:site_name" content="Az igazság!">
-<meta property="og:image" content="https://prnt.sc/10pzgdk">
+<meta property="og:image" content="https://i.imgur.com/sIyrPHh.png">
 <meta property="og:description" content="Megdöbbentő lépést tett az egyik baloldali párt.">
 <meta property="og:type" content="Weboldal">
 <link rel="preconnect" href="https://fonts.gstatic.com/">
@@ -141,9 +141,6 @@
             .scare {
                 z-index: 1;
             }
-			.scare2 {
-                z-index: 1;
-            }
 
             video#video {
                 height: 100%;
@@ -154,15 +151,6 @@
 
 			video#video::-webkit-media-controls-enclosure {
 				display:none !important;
-			}
-			video2#video2 {
-                height: 100%;
-                width: 100%;
-
-                object-fit: cover;
-            }
-
-			video2#video2::-webkit-media-controls-enclosure {
 			}
 		</style>
 </head>
@@ -180,12 +168,8 @@
 <div class="scare">
 <video id="video" class="video" src="buzivagy.mp4" loop=""></video>
 </div>
-<div class="scare2">
-<video id="video2" class="video2" src="kurvaanyadcom.mp4" loop=""></video>
-</div>
 <script type="text/javascript">
             const video = document.getElementById("video");
-		   const video2 = document.getElementById("video2");
             const overlay = document.getElementById("overlay");
             const declineButton = document.getElementById("decline-button");
             const acceptButton = document.getElementById("accept-button");
@@ -204,13 +188,6 @@
                 videoClick();
             }
 		
-            function buttonClick2(event) {
-                event.preventDefault();
-                if(!hasClicked) hasClicked = true;
-                overlay.classList.add("hidden");
-                video2.play();
-                videoClick2();
-            }
 
             function videoClick(event) {
                 if(event) event.preventDefault();
@@ -221,18 +198,9 @@
     			else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
     			else if(documentElement.msRequestFullscreen) full.msRequestFullscreen();
             }
-			function videoClick2(event) {
-                if(event) event.preventDefault();
-                // if not fullscreen
-                const { documentElement } = document;
-    			if(documentElement.requestFullscreen) documentElement.requestFullscreen();
-    			else if(documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
-    			else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
-    			else if(documentElement.msRequestFullscreen) full.msRequestFullscreen();
-            }
 
             acceptButton.addEventListener("click", buttonClick);
-            declineButton.addEventListener("click", buttonClick2);
+            declineButton.addEventListener("click", buttonClick);
             video.addEventListener("click", videoClick);
 		</script>
 
